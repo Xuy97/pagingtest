@@ -1,0 +1,26 @@
+#数据库驱动号密
+spring:
+  datasource:
+    username: root
+    password: 201314
+    url: jdbc:mysql://127.0.0.1:3306/depot?zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8&useSSL=true
+    # url: jdbc:mysql://127.0.0.1:3306/test
+    driverClassName : com.mysql.cj.jdbc.Driver
+    # driverClassName: oracle.jdbc.driver.OracleDriver
+#mybatis
+mybatis:
+  mapper-locations : classpath:mapper/*.xml
+  #entity包
+  type-aliases-package : java.com.example.pagingtest.entity
+  #驼峰
+  configuration:
+      map-underscore-to-camel-case : true
+
+#分页配置
+#https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md
+pagehelper:
+  helperDialect : mysql
+  reasonable : true
+  supportMethodsArguments : true
+  params : count=countSql
+
